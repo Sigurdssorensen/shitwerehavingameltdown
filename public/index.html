@@ -1,0 +1,375 @@
+<!-- All frameworks sourced in this file will be sourced as they appear in the code. However, all usage areas of these
+frameworks would be too much to source as most of the code uses these frameworks. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shit We're Having A Meltdown</title>
+    <!-- The code snippet (1. bootstrap) below has been sources from:
+    https://getbootstrap.com/
+    The code appears in its original form -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- End of code snippet (1. bootstrap) -->
+    <link id="css-file" rel="stylesheet" href="css/home.css" charset="utf-8">
+</head>
+<body>
+    <!-- LANDING PAGE -->
+    <div class="container" id="landing_page">
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <h1>Game Setup</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-6 mb-3 text-center">
+                <input id="player-name" type="text" placeholder="Player name"/>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input id="player-option-one" type="radio" name="options" value="player-one" autocomplete="off">Player 1
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input id="player-option-two" type="radio" name="options" value="player-two" autocomplete="off">Player 2
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-6">
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-ready">Ready</button>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="alert-success" id="output"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAYER ONE -->
+    <div class="container-fluid" id="player_one_screen">
+        <div class="row header-row">
+            <div class="col-4 command-window">
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <!-- Empty space -->
+                    </div>
+
+                    <div class="col-8 command-window-inner">
+                        <div class="row" id="command-window-textfield-p1">
+                            <p>Game starts in <strong>5</strong> seconds</p>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <!-- Empty space -->
+                    </div>
+                    <p>The command window</p>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="row">
+                    <div class="col-12" id="reactor-heat-level">
+                        <!-- The artwork (2. gauge) below has been sourced from:
+                        https://pixabay.com/no/gauge-ikoner-ytelse-rodentia-ikoner-1294568/
+                        The artwork appears in its original form -->
+                        <img id="gauge-img" src="\img\gauge-1294568_1280.png" alt="Heat Gauge.">
+                        <!-- End of artwork (2. gauge) -->
+                        <p class="description-text">Reactor Heat Level</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6" id="heat-warning-one">
+                        <!-- The artwork (3. flash) below has been sourced from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork appears in its original form. -->
+                        <img id="warning-img-yellow" src="\img\warning-yellow.png" alt="lit Warning Lamp">
+                        <!-- End of artwork (3. flash) -->
+                        <br>
+                        <p class="description-text">Heat Warning One</p>
+                    </div>
+
+                    <div class="col-6" id="heat-warning-two">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="warning-img-red" src="\img\warning-grey.png" alt="Unlit Warning Lamp">
+                        <!-- End of artwork (3. flash) -->
+                        <p class="description-text">Heat Warning Two</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1" id="overdrive-mode-heat">
+                <div class="row">
+                    <div class="col-2 empty-space">
+                        <!-- Empty space -->
+                    </div>
+                    <div class="col-8">
+                        <div class="overdrive-temperature-outer">
+                            <div class="overdrive-temperature-inner">
+                                <div class="overdrive-temperature-increase"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 empty-space">
+                        <!-- Empty space -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-3">
+                        <button id="cooling-system-one-btn" type="button" class="btn-warning btn-primary">Valve One</button>
+                    </div>
+                    <div class="col-3">
+                        <button id="cooling-system-two-btn" type="button" class="btn-warning btn-primary">Valve Two</button>
+                    </div>
+                    <div class="col-3">
+                        <button id="cooling-system-three-btn" type="button" class="btn-warning btn-primary">Valve Three</button>
+                    </div>
+                    <div class="col-3">
+                        <button id="cooling-system-four-btn" type="button" class="btn-warning btn-primary">Valve Four</button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <p>Safety Valves</p>
+                </div>
+
+                <div class="row" id="cooling-system-one">
+                    <div class="col-8">
+                        <p class="cooling-text">Sector 1 - Cooling System</p>
+                    </div>
+                    <div class="col-4">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="cooling-lamp-one" class="cooling-lamps" src="\img\warning-grey.png" alt="Unlit Cooling Lamp">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                </div>
+
+                <div class="row" id="cooling-system-two">
+                    <div class="col-8">
+                        <p class="cooling-text">Sector 2 - Cooling System</p>
+                    </div>
+                    <div class="col-4">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="cooling-lamp-two" class="cooling-lamps" src="\img\warning-grey.png" alt="Unlit Cooling Lamp">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                </div>
+
+                <div class="row" id="cooling-system-three">
+                    <div class="col-8">
+                        <p class="cooling-text">Sector 3 - Cooling System</p>
+                    </div>
+                    <div class="col-4">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="cooling-lamp-three" class="cooling-lamps" src="\img\warning-grey.png" alt="Unlit Cooling Lamp">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                </div>
+
+                <div class="row" id="cooling-system-four">
+                    <div class="col-8">
+                        <p class="cooling-text">Sector 4 - Cooling System</p>
+                    </div>
+                    <div class="col-4">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="cooling-lamp-four" class="cooling-lamps" src="\img\warning-grey.png" alt="Unlit Cooling Lamp">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAYER TWO -->
+    <div class="container-fluid" id="player_two_screen">
+        <div class="row header-row">
+            <div class="col-4 command-window">
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <!-- Empty space -->
+                    </div>
+
+                    <div class="col-8 command-window-inner">
+                        <div class="row" id="command-window-textfield-p2">
+                            <p>Game starts in <strong>5</strong> seconds</p>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <!-- Empty space -->
+                    </div>
+                    <p>The command window</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- The artwork (4. graph) below has been sourced from:
+                        https://pixabay.com/no/knappen-grafen-diagrammet-160271/
+                        The artwork appears in its original form -->
+                        <img id="demand-graph" src="\img\demand-graph.png">
+                        <!-- End of artwork (4. graph) -->
+                        <p class="description-text">Demand Graph</p>
+                    </div>
+                </div>
+
+                <div class="row space-top">
+                    <div class="col-3">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="generator-lamp-one" class="generator-lamps" src="\img\warning-grey.png" alt="Generator Lamp One">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                    <div class="col-3">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="generator-lamp-two" class="generator-lamps" src="\img\warning-grey.png" alt="Generator Lamp Two">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                    <div class="col-3">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="generator-lamp-three" class="generator-lamps" src="\img\warning-grey.png" alt="Generator Lamp Three">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                    <div class="col-3">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="generator-lamp-four" class="generator-lamps" src="\img\warning-grey.png" alt="Generator Lamp Four">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <button id="generator-level-one-btn" type="button" class="btn-warning btn-primary">Level One</button>
+                    </div>
+                    <div class="col-3">
+                        <button id="generator-level-two-btn" type="button" class="btn-warning btn-primary">Level Two</button>
+                    </div>
+                    <div class="col-3">
+                        <button id="generator-level-three-btn" type="button" class="btn-warning btn-primary">Level Three</button>
+                    </div>
+                    <div class="col-3">
+                        <button id="generator-level-four-btn" type="button" class="btn-warning btn-primary">Level Four</button>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <p class="description-text">Generator Output Level</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-4">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="reserve-lamp-one" class="reserve-lamps" src="\img\warning-grey.png" alt="Reserve Lamp One">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                    <div class="col-8">
+                        <div id="reserve-one-outer">
+                            <div id="reserve-one-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="reserve-lamp-two" class="reserve-lamps" src="\img\warning-grey.png" alt="Reserve Lamp Two">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                    <div class="col-8">
+                        <div id="reserve-two-outer">
+                            <div id="reserve-two-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <!-- The artwork (3. flash) below has been altered from:
+                        https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+                        The artwork's colour has been altered to fit the project need. -->
+                        <img id="reserve-lamp-three" class="reserve-lamps" src="\img\warning-grey.png" alt="Reserve Lamp Three">
+                        <!-- End of artwork (3. flash) -->
+                    </div>
+                    <div class="col-8">
+                        <div id="reserve-three-outer">
+                            <div id="reserve-three-inner"></div>
+                        </div>
+                    </div>
+                    <p>Reserves</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- The code snippet (5. getBootstrap) below has been sourced from:
+    https://getbootstrap.com/docs/4.0/getting-started/introduction/
+    The code snippet appears in its original form. -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- End of code snippet (5. getBootstrap) -->
+    <!-- The code snippet (6. socket IO) below has been sourced from:
+    https://socket.io/
+    The code appears in its original form. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <!-- End of code snippet (6. socket IO) -->
+    <script src="/main.js"></script>
+</body>
+</html>
+
+<!-- REFERENCE LIST INDEX.HTML
+
+1. bootstrap (n.d) bootstrap. Retrieved from:
+https://getbootstrap.com/
+
+2. Pixabay(2016)gauge. Retrieved from:
+https://pixabay.com/no/gauge-ikoner-ytelse-rodentia-ikoner-1294568
+
+3. Pixabay(2013)flash. Retrieved from:
+https://pixabay.com/no/advarselslampen-flash-veiarbeid-160180/
+
+4. Pixabay(2013)graph. Retrieved from:
+https://pixabay.com/no/knappen-grafen-diagrammet-160271/
+
+5. Bootstrap(n.d)introduction. Retrieved from:
+https://getbootstrap.com/docs/4.0/getting-started/introduction/
+
+6. socket io(n.d) socket 2.0 is here. Retrieved from:
+https://socket.io/
+-->
